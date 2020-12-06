@@ -1,4 +1,4 @@
-package com.example.leadevent
+package com.leadevent.alpha
 
 import io.flutter.embedding.android.FlutterActivity
 
