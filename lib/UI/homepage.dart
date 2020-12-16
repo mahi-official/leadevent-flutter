@@ -91,7 +91,7 @@ class _MyHomepageViewState extends State<MyHomepageView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              "Shoots & Events",
+                              "Events",
                               maxLines: 1,
                               textAlign: TextAlign.left,
                               style: TextStyle(
@@ -126,9 +126,9 @@ class _MyHomepageViewState extends State<MyHomepageView> {
                             horizontal: AppSizes.sidePadding),
                         child: TabBarView(
                           children: <Widget>[
-                            buildOrderList(state.orderData, bloc),
-                            buildOrderList(state.orderData, bloc),
-                            buildOrderList(state.orderData, bloc),
+                            //buildEventList(state.eventsData, bloc),
+                            //buildEventList(state.eventsData, bloc),
+                            //buildEventList(state.eventsData, bloc),
                           ],
                         ),
                       ),
@@ -142,18 +142,18 @@ class _MyHomepageViewState extends State<MyHomepageView> {
         });
   }
 
-  ListView buildOrderList(List<UserOrder> orders, ProfileBloc bloc) {
+  /*ListView buildEventList(List<Event> events, HomepageBloc bloc) {
     return ListView.builder(
         shrinkWrap: true,
-        itemCount: orders.length,
+        itemCount: events.length,
         itemBuilder: (context, index) {
-          return OpenFlutterOrderTile(
-            order: orders[index],
-            onClick: ((int orderId) => {
-                  bloc..add(ProfileMyOrderDetailsEvent(orderId)),
-                  widget.changeView(changeType: ViewChangeType.Exact, index: 7)
+          return OpenEventDetails(
+            order: events[index],
+            onClick: ((int eventId) => {
+                  bloc..add(HomepageEventDetailsEvent(eventId)),
+                  widget.changeView(changeType: EventStatus.New, index: 7)
                 }),
           );
         });
-  }
+  }*/
 }

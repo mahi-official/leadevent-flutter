@@ -1,10 +1,20 @@
 import 'package:equatable/equatable.dart';
 
-enum EventStatus {New, Applied, Rejected, InProgress, Finished, Closed, Processing }
+enum EventStatus {
+  New,
+  Applied,
+  Rejected,
+  InProgress,
+  Finished,
+  Closed,
+  Processing
+}
 
 class Event extends Equatable {
   final int id;
-  final List<CartItem> products;
+
+  Event(this.id);
+  /*final List<CartItem> products;
   final int orderNumber;
   final UserOrderStatus orderStatus;
   final ShippingAddressModel shippingAddress;
@@ -28,7 +38,7 @@ class Event extends Equatable {
   int get totalQuantity => products.fold(
       0, (previousValue, element) => previousValue += element.productQuantity.quantity);
 
-  UserOrder({
+  Event({
     this.id,
     List<CartItem> products,
     this.orderNumber,
@@ -54,5 +64,10 @@ class Event extends Equatable {
     trackingNumber,
     promo,
     orderDate,
-  ];
+  ];*/
+
+  @override
+  List<Object> get props => [
+        id,
+      ];
 }
